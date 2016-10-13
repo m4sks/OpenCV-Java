@@ -1,2 +1,2 @@
 # ImageProcessingbyOpenCV-Java
-A memorandum for Image Processing in Java by OpenCV3.1.
+A memorandum for Image Processing by OpenCV3.1 with Java.
