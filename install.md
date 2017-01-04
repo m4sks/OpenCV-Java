@@ -1,36 +1,37 @@
 ## Install OpenCV-Java into Mac
 ### In terminal
-$brew tap homebrew/science   (homebrew/scienceのinstall, 以前に行っていれば必要なし)
+1. Install Homebrew-Science
+>$brew tap homebrew/science (once)
 
-$brew install opencv3 --with-java   (openCVのversionによりopencv(version上1桁))
+2. Install OpenCV
+>$brew install opencv3 --with-java
 
-$cd usr/local/Cellar/opencv3/3.1.0_4/share/java    //installしたdirectriの(version)/share/OpenCV/javaに入る
+3. Into file
+>$cd usr/local/Cellar/opencv3/3.1.0_4/share/java
 
-### eclipse
-$mv libopencv_java310.so をlibopencv_java310.dylibに書き換え(コピーして書き換えをお勧めする)
+### Eclipse
+1. [Terminal] Copy or rename file
+>$cp ./libopencv_java310.so libopencv_java310.dylib
 
-eclipse -> preference
+2. [Eclipse] eclipse -> preference ->Java -> Build Path -> User Libraries
 
-Java -> Build Path -> User Libraries
+3. Press "New"
 
-Press "New"
+4. Input library name "opencv-(version)"
 
-Input library name "opencv-3.1"
+5. Click library you made
 
-Press library you made
+6. Click "Add External JARs..." -> add "opencv-310.jar"
 
-Press "Add External JARs..." -> add "opencv-310.jar"
+7. Expand "opencv-3.1" -> "Native library location" -> "External Folder..." -> "libopencv_java310.dylib"
 
-Expand "opencv-3.1" -> Press "Native library location" -> Press "External Folder..." -> Double click "libopencv_java310.dylib"
-
-使いたいProjectで右クリックしてBuild Path -> Add libraries... -> user library & Next -> check "opencv-3.1". Finish.
+8. In your project, Build Path -> Add libraries... -> user library & Next -> check "opencv-3.1"
 
 ### Intelli J
-File -> Project Structure... -> Libraries 
-  ->左上の "+" -> Java -> Select /usr/local/Cellar/opencv3/3.1.0_4/share/OpenCV/java/opencv-310.jar -> ok
+1. [Intelli J] File -> Project Structure... -> Libraries
+  ->"+" -> Java
 
-右上の"projectName"を押す -> Edit Configurations
-  ->Confuguration -> VM optionsに-Djava.library.path=/usr/local/Cellar/opencv3/3.1.0_4/share/OpenCV/javaを入れる
+2. Select "/usr/local/Cellar/opencv3/3.1.0_4/share/OpenCV/java/opencv-310.jar"
 
-(/usr/local/Cellar/opencv3/3.1.0_4/share/OpenCV/java/の.soファイルをeclipse用に書き換えてしまっていたら,
-  .soに書き換えコピー($cp /usr/local/Cellar/opencv3/3.1.0_4/share/OpenCV/java/libopencv_java310.dylib libopencv_java310.dylib))
+3. "projectName" -> Edit Configurations
+  ->Confuguration -> Input "-Djava.library.path=/usr/local/Cellar/opencv3/3.1.0_4/share/OpenCV/java" in "VM options"
