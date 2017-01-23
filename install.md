@@ -1,7 +1,7 @@
 ## Install OpenCV-Java into Mac
 ### In terminal
-1. Install Homebrew-Science
->$brew tap homebrew/science (once)
+1. Install Homebrew-Science (once)
+>$brew tap homebrew/science
 
 2. Install OpenCV
 >$brew install opencv3 --with-java
